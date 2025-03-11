@@ -2,7 +2,6 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: arbetsprov-app-route
-  namespace: arbetsprov-app
 spec:
   host: arbetsprov-app.testapp.se
   to:

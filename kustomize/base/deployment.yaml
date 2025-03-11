@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: arbetsprov-app
-  namespace: arbetsprov-app
 spec:
   replicas: 1
   selector:
