@@ -5,6 +5,8 @@ resources:
   - deployment.yaml
   - service.yaml
   - route.yaml
+  - gateway.yaml
+  - virtualservice.yaml
 commonLabels:
   app.kubernetes.io/name: arbetsprov-app
   app.kubernetes.io/instance: arbetsprov-app-test

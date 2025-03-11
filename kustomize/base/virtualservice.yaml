@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: arbetsprov-virtualservice
+spec:
+  hosts:
+  - "arbetsprov-app.testapp.se"
+  gateways:
+  - arbetsprov-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/api"
+    route:
+    - destination:
+        host: arbetsprov-api-service # The supposed service for the fictive API app
+        port:
+          number: 8080
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+    - destination:
+        host: arbetsprov-testapp-service
+        port:
+          number: 8080
