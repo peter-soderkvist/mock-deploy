@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: arbetsprov-app
+    app.kubernetes.io/instance: arbetsprov-app-test
+    app.kubernetes.io/version: "0.0.1"
+  name: arbetsprov-app
+  namespace: arbetsprov-app-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arbetsprov-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: arbetsprov-app
+    spec:
+      containers:
+      - env: 
+          - name: QUARKUS_LOG_LEVEL
+            value: DEBUG
+        image: arbetsprov.registry.se/arbetsprov-app:0.0.1
+        imagePullPolicy: IfNotPresent
+        name: arbetsprov-app
+        resources:
+          requests:
+            cpu: 20m
+            memory: 20Mi
+          limits:
+            cpu: 50m
+            memory: 50Mi
+        securityContext: {}
