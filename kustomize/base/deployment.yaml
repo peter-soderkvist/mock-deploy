@@ -1,12 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app.kubernetes.io/name: arbetsprov-app
-    app.kubernetes.io/instance: arbetsprov-app-test
-    app.kubernetes.io/version: "0.0.1"
   name: arbetsprov-app
-  namespace: arbetsprov-app-test
+  namespace: arbetsprov-app
 spec:
   replicas: 1
   selector:

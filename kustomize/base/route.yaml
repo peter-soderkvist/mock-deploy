@@ -1,11 +1,8 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  labels:
-    app.kubernetes.io/name: arbetsprov-app
-    app.kubernetes.io/instance: arbetsprov-app-test
-    app.kubernetes.io/version: "0.0.1"
   name: arbetsprov-app-route
+  namespace: arbetsprov-app
 spec:
   host: arbetsprov-app.testapp.se
   to:
